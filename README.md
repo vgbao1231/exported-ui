@@ -20,7 +20,7 @@ To run this demo on your local machine, please follow these steps.
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://your-repository-url.git](https://your-repository-url.git)
+    git clone https://github.com/vgbao1231/exported-ui.git
     cd your-project-directory
     ```
 
