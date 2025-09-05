@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* #fafafa */
+    --foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --popover: 0 0% 100%; /* #ffffff */
+    --popover-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --primary: 32.7 94.7% 53.1%; /* #f97316 */
+    --primary-foreground: 210 20% 98%; /* #f1f5f9 */
+    --secondary: 210 36% 94%; /* #e2e8f0 */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --muted: 210 40% 96%; /* #f1f5f9 */
+    --muted-foreground: 0 0% 33%; /* #555555 */
+    --muted-card: 0 0% 98%; /* #fafafa */
+    --accent: 30 100% 97.1%; /* #fff8f1 */
+    --accent-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --accent-card: 0 0% 90%; /* #e5e5e5 */
+    --destructive: 0 84.2% 60.2%; /* #ef4444 */
+    --destructive-foreground: 210 20% 98%; /* #f1f5f9 */
+    --border: 216 7% 85%; /* #d6d8db */
+    --input: 214.3 31.8% 91.4%; /* #e5e7eb */
+    --ring: 32.7 94.7% 53.1%; /* #f97316 */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 14%; /* #232323 */
+    --foreground: 210 20% 98%; /* #f1f5f9 */
+    --card: 0 0% 18%; /* #2d2d2d */
+    --card-foreground: 210 20% 98%; /* #f1f5f9 */
+    --popover: 0 0% 13%; /* #222222 */
+    --popover-foreground: 210 20% 98%; /* #f1f5f9 */
+    --primary: 24 84% 50%; /* #ea6a15 */
+    --primary-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --secondary: 215.4 25.2% 17.6%; /* #1e293b */
+    --secondary-foreground: 210 20% 98%; /* #f1f5f9 */
+    --muted: 0 0% 20%; /* #333333 */
+    --muted-card: 0 0% 20%; /* #333333 */
+    --muted-foreground: 0 0% 72%; /* #b7b7b7 */
+    --accent: 0 0% 20%; /* #333333 */
+    --accent-foreground: 210 20% 98%; /* #f1f5f9 */
+    --accent-card: 0 0% 16%; /* #282828 */
+    --destructive: 0 63% 45%; /* #bc2b2b */
+    --destructive-foreground: 210 20% 98%; /* #f1f5f9 */
+    --border: 40 3.5% 26.3%; /* #44423e */
+    --input: 215.4 25.2% 17.6%; /* #1e293b */
+    --ring: 32.7 94.7% 53.1%; /* #f97316 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  html {
+    @apply transition-colors duration-300;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--muted) / 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Chrome, Safari, Edge */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -1 !important;
+}
+
+@layer components {
+  .center-both {
+    @apply flex items-center justify-center;
+  }
+
+  .dark .bg-gradient-to-r {
+    @apply from-[#222222] to-[#242424];
+  }
+
+  .dark .shadow-lg {
+    @apply shadow-2xl shadow-black/25;
+  }
+
+  .dark .backdrop-blur {
+    @apply backdrop-brightness-75;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .snap-mandatory {
+    scroll-snap-type: mandatory;
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+}
